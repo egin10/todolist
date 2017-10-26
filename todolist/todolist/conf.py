@@ -1,4 +1,4 @@
 # Config DB
-db_name = 'todo'
+db_name = 'todos'
 username = 'root'
 password = 'secret'
