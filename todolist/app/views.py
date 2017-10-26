@@ -36,3 +36,23 @@ def add(request):
         return redirect('/app')
     else:
         return render(request, 'add.html')
+
+def update(request, id):
+    todo = Todo.objects.get(id=id)
+
+    if(request.method == 'POST'):
+        todo.title = request.POST['title']
+        todo.text = request.POST['text']
+        todo.save()
+
+        return redirect('/app')
+    else:
+        data = {
+            'todo' : todo
+        }
+        return render(request, 'update.html', data)
+
+def delete(request, id):
+    data = Todo.objects.get(id=id)
+    data.delete()
+    return redirect('/app')

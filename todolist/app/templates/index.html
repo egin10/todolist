@@ -2,7 +2,9 @@
     <a href="/app/add" class="add">Add Todos</a>
     <ul>
         {% for todo in todos %}
-            <li><a href="/app/details/{{todo.id}}"> {{todo.title}} </a> : {{todo.text}}</li>
+            <li><a href="/app/details/{{todo.id}}"> {{todo.title}} </a> : {{todo.text}} 
+                <a href="/app/update/{{todo.id}}">edit</a> | <a href="/app/delete/{{todo.id}}">delete</a>
+            </li>
         {% endfor %}
     </ul>
 {% include 'partials/footer.html' %}
