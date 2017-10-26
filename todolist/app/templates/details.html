@@ -1,0 +1,9 @@
+{% include 'partials/header.html' %}
+    <a href="/app"><< Go Back</a>
+    <h3>{{todo.title}}</h3>
+    <p>
+        {{todo.text}}
+    </p>
+    <br>
+    Created on {{todo.created_at}}
+{% include 'partials/footer.html' %}

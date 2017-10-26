@@ -1,13 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
-    <h1>Hello from Indonesia</h1>
-    <p>My name is {{name}}</p>
-</body>
-</html>
+{% include 'partials/header.html' %}
+    <a href="/app/add" class="add">Add Todos</a>
+    <ul>
+        {% for todo in todos %}
+            <li><a href="/app/details/{{todo.id}}"> {{todo.title}} </a> : {{todo.text}}</li>
+        {% endfor %}
+    </ul>
+{% include 'partials/footer.html' %}
